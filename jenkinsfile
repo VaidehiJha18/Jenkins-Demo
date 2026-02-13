@@ -1,0 +1,23 @@
+pipeline{
+  agent any
+
+  stages{
+    stage('clone'){
+      steps{
+        echo'cloning repository..'
+      }
+    }
+
+    stage('Install'){
+      steps{
+        sh 'npm install'
+      }
+    }
+
+    stage('Run'){
+      steps{
+        sh 'npm start'
+      }
+    }
+  }
+}
